@@ -1,6 +1,7 @@
 package com.sparta.pom;
 
-import net.serenitybdd.annotations.DefaultUrl;
+
+import net.serenitybdd.annotations.DefaultUrl; // Ensure this is the Serenity 4 import
 import net.serenitybdd.core.pages.PageObject;
 import org.openqa.selenium.By;
 

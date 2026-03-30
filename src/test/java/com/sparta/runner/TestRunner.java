@@ -26,8 +26,9 @@ public class TestRunner {
 
         @Test
         public void testCompleteRegistrationFlow() {
-                // PAGE 1: Initial Signup
-                signupPage.open();
+                // PAGE 1: Initial Signup - FIXED LINE BELOW
+                signupPage.openAt("https://automationexercise.com/login");
+
                 String uniqueEmail = "sparta" + System.currentTimeMillis() + "@test.com";
                 signupPage.enterNameAndEmail("Spartan User", uniqueEmail);
                 signupPage.clickSignup();
@@ -42,5 +43,5 @@ public class TestRunner {
 
                 // Final Assertion
                 assertThat(driver.getCurrentUrl(), containsString("account_created"));
-        }
-}
+        } // Closes the Method
+} // Closes the Class
