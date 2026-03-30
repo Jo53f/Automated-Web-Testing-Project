@@ -1,4 +1,4 @@
-package com.sparta.pom.runner;
+package com.sparta.runner;
 
 import io.cucumber.junit.CucumberOptions;
 import net.serenitybdd.cucumber.CucumberWithSerenity;
