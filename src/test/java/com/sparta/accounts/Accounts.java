@@ -52,8 +52,12 @@ public class Accounts {
             "07845829012"
     );
 
-    public static String getValidEmail() {
+    public static String GenerateNewValidEmail() {
         return "test" + System.currentTimeMillis() + VALID_EMAIL;
+    }
+
+    public static String getValidPassword() {
+        return VALID_PASSWORD;
     }
 
     public record Account(String email, String password, String DOB_day, String DOB_month, String DOB_year, String firstName, String lastName, String address,
