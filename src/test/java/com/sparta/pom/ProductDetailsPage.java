@@ -6,9 +6,8 @@ import net.thucydides.core.pages.PageObject;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.FindBy;
 
-//@DefaultUrl("https://automationexercise.com/products")
 @DefaultUrl("https://automationexercise.com/product_details/{productId}")
-public class ProductPage extends PageObject {
+public class ProductDetailsPage extends PageObject {
 
     // Product information
     @FindBy(css = ".product-information h2")
@@ -46,7 +45,7 @@ public class ProductPage extends PageObject {
     @FindBy(css = "button[aria-label='Consent']")
     private WebElementFacade consentButton;
 
-    public ProductPage(WebDriver driver) {
+    public ProductDetailsPage(WebDriver driver) {
     }
 
     public String getProductName() {

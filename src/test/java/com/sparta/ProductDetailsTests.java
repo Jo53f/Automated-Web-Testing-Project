@@ -1,6 +1,6 @@
 package com.sparta;
 
-import com.sparta.pom.ProductPage;
+import com.sparta.pom.ProductDetailsPage;
 import net.serenitybdd.junit5.SerenityJUnit5Extension;
 import net.thucydides.core.annotations.Managed;
 import org.junit.jupiter.api.Test;
@@ -9,10 +9,10 @@ import org.junit.jupiter.api.extension.ExtendWith;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 @ExtendWith(SerenityJUnit5Extension.class)
-public class ProductTests {
+public class ProductDetailsTests {
 
     @Managed
-    ProductPage productPage;
+    ProductDetailsPage productPage;
 
     @Test
     public void verifyAddToCartWithQuantity() {
