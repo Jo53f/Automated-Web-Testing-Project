@@ -28,6 +28,18 @@ public class Accounts {
             "07837584381"
     );
 
+    private static final Account account3 = new Account(
+            "third@example.com",
+            "Expasswordple8921",
+            "13-11-2001",
+            "Spockle",
+            "Vonny",
+            "55 Back Alley",
+            "Great Britain",
+            "N18 3x0",
+            "07845829012"
+    );
+
     public record Account(String email, String password, String DOB, String firstName, String lastName, String address,
                           String country, String cityZipCode, String mobileNumber) {
 
