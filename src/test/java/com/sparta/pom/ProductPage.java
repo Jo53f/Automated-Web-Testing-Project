@@ -6,81 +6,82 @@ import net.thucydides.core.pages.PageObject;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.FindBy;
 
-       @DefaultUrl("https://automationexercise.com/products")
-       public class ProductPage extends PageObject {
+//@DefaultUrl("https://automationexercise.com/products")
+@DefaultUrl("https://automationexercise.com/product_details/{productId}")
+public class ProductPage extends PageObject {
 
-           // Product information
-           @FindBy(css = ".product-information h2")
-           private WebElementFacade productName;
+    // Product information
+    @FindBy(css = ".product-information h2")
+    private WebElementFacade productName;
 
-           @FindBy(css = ".product-information span span")
-           private WebElementFacade productPrice;
+    @FindBy(css = ".product-information span span")
+    private WebElementFacade productPrice;
 
-           @FindBy(css = "#quantity")
-           private WebElementFacade quantityInput;
+    @FindBy(css = "#quantity")
+    private WebElementFacade quantityInput;
 
-           @FindBy(css = ".cart .btn.btn-default")
-           private WebElementFacade addToCartButton;
+    @FindBy(css = ".cart")
+    private WebElementFacade addToCartButton;
 
-           // Modal + navigation
-           @FindBy(css = "#cartModal")
-           private WebElementFacade successModal;
+    // Modal + navigation
+    @FindBy(css = "#cartModal")
+    private WebElementFacade successModal;
 
-           @FindBy(css = "a[href='/view_cart']")
-           private WebElementFacade viewCartButton;
+    @FindBy(css = "a[href='/view_cart']")
+    private WebElementFacade viewCartButton;
 
-           // Product details (category, availability, condition, brand)
-           @FindBy(css = ".product-information p:nth-of-type(1)")
-           private WebElementFacade category;
+    // Product details (category, availability, condition, brand)
+    @FindBy(css = ".product-information p:nth-of-type(1)")
+    private WebElementFacade category;
 
-           @FindBy(css = ".product-information p:nth-of-type(2)")
-           private WebElementFacade availability;
+    @FindBy(css = ".product-information p:nth-of-type(2)")
+    private WebElementFacade availability;
 
-           @FindBy(css = ".product-information p:nth-of-type(3)")
-           private WebElementFacade condition;
+    @FindBy(css = ".product-information p:nth-of-type(3)")
+    private WebElementFacade condition;
 
-           @FindBy(css = ".product-information p:nth-of-type(4)")
-           private WebElementFacade brand;
+    @FindBy(css = ".product-information p:nth-of-type(4)")
+    private WebElementFacade brand;
 
-           @FindBy(css = "button[aria-label='Consent']")
-           private WebElementFacade consentButton;
+    @FindBy(css = "button[aria-label='Consent']")
+    private WebElementFacade consentButton;
 
-           public ProductPage(WebDriver driver) {
-           }
+    public ProductPage(WebDriver driver) {
+    }
 
-           public String getProductName() {
-               return productName.getText();
-           }
+    public String getProductName() {
+        return productName.getText();
+    }
 
-           public String getProductPrice() {
-               return productPrice.getText();
-           }
+    public String getProductPrice() {
+        return productPrice.getText();
+    }
 
-           public void setQuantity(int qty) {
-               quantityInput.clear();
-               quantityInput.type(String.valueOf(qty));
-           }
+    public void setQuantity(int qty) {
+        quantityInput.clear();
+        quantityInput.type(String.valueOf(qty));
+    }
 
-           public void clickAddToCart() {
-               addToCartButton.click();
-           }
+    public void clickAddToCart() {
+        addToCartButton.click();
+    }
 
-           public boolean isSuccessModalVisible() {
-               return successModal.isVisible();
-           }
+    public boolean isSuccessModalVisible() {
+        return successModal.isVisible();
+    }
 
-           public void clickViewCart() {
-               viewCartButton.click();
-           }
+    public void clickViewCart() {
+        viewCartButton.click();
+    }
 
-           public boolean isProductDetailVisible() {
-               return productName.isVisible()
-                       && category.isVisible()
-                       && productPrice.isVisible()
-                       && availability.isVisible()
-                       && condition.isVisible()
-                       && brand.isVisible();
-           }
+    public boolean isProductDetailVisible() {
+        return productName.isVisible()
+                && category.isVisible()
+                && productPrice.isVisible()
+                && availability.isVisible()
+                && condition.isVisible()
+                && brand.isVisible();
+    }
 
            public void acceptConsent() {
                try {
@@ -93,5 +94,16 @@ import org.openqa.selenium.support.FindBy;
                }
            }
        }
+    public void acceptConsent() {
+        try {
+            if (consentButton.isVisible()) {
+                consentButton.waitUntilClickable().click();
+                consentButton.waitUntilNotVisible();
+            }
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+    }
+}
 
 
