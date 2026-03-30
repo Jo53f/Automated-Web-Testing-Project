@@ -1,6 +1,5 @@
 package com.sparta.pom;
 
-git config
 import net.serenitybdd.core.pages.WebElementFacade;
 import net.thucydides.core.annotations.DefaultUrl;
 import net.thucydides.core.pages.PageObject;
