@@ -1,5 +1,6 @@
 package com.sparta;
 
+import com.sparta.accounts.Accounts;
 import com.sparta.pom.Homepage;
 import com.sparta.pom.LoginSignup;
 import net.serenitybdd.junit5.SerenityJUnit5Extension;
@@ -28,8 +29,8 @@ public class LoginSignupTest {
     @DisplayName("typed username")
     void typingRight(){
 //        login.open();
-        login.enterLoginEmail("hello@hotmail.com");
-        login.enterLoginPassword("password1");
+        login.enterLoginEmail(Accounts.GenerateNewValidEmail());
+        login.enterLoginPassword(Accounts.getValidPassword());
         login.pressLogin();
 
         MatcherAssert.assertThat(login.isLoginError(), Matchers.is(true));
