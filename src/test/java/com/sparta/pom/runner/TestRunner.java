@@ -1,0 +1,20 @@
+package com.sparta.pom.runner;
+
+import io.cucumber.junit.CucumberOptions;
+import net.serenitybdd.cucumber.CucumberWithSerenity;
+import org.junit.runner.RunWith;
+
+@RunWith(CucumberWithSerenity.class)
+@CucumberOptions(
+        features = "src/test/resources/features",
+        glue = "com/sparta/simpletests/steps",
+        plugin = {
+                "pretty",
+                "html:target/testReport.html",
+                "json:target/testReport.json"
+        },
+        publish = true
+)
+public class TestRunner {
+}
+
