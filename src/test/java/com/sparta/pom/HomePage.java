@@ -26,6 +26,12 @@ public class HomePage extends PageObject {
     @FindBy(css = "button[aria-label='Consent']")
     private WebElementFacade consentButton;
 
+    @FindBy(linkText = "Logout")
+    private WebElementFacade logoutLink;
+
+    @FindBy(linkText = "Delete Account")
+    private WebElementFacade deleteAccountLink;
+
     public void goToHome() {
         homeLink.click();
     }
@@ -44,6 +50,14 @@ public class HomePage extends PageObject {
 
     public void goToContact() {
         contactLink.click();
+    }
+
+    public void logOut() {
+        loginLink.click();
+    }
+
+    public void deleteAccount() {
+        deleteAccountLink.click();
     }
 
     public void acceptConsent() {
