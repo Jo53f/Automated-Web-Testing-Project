@@ -55,6 +55,8 @@ public class LoginSignup extends PageObject {
         signupEmail.type(email);
     }
 
+    public void pressSignup() {signupButton.click();}
+
     public boolean isLoginError() {
         return loginError.isVisible();
     }
@@ -70,6 +72,7 @@ public class LoginSignup extends PageObject {
     public String getSignupError() {
         return signupError.getText();
     }
+
     public void acceptConsent() {
         try {
             if (consentButton.isVisible()) {
