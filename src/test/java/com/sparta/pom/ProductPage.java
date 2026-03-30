@@ -83,17 +83,6 @@ public class ProductPage extends PageObject {
                 && brand.isVisible();
     }
 
-           public void acceptConsent() {
-               try {
-                   if (consentButton.isVisible()) {
-                       consentButton.waitUntilClickable().click();
-                       consentButton.waitUntilNotVisible();
-                   }
-               } catch (Exception e) {
-                   System.out.println(e);
-               }
-           }
-       }
     public void acceptConsent() {
         try {
             if (consentButton.isVisible()) {
@@ -103,6 +92,10 @@ public class ProductPage extends PageObject {
         } catch (Exception e) {
             System.out.println(e);
         }
+    }
+
+    public void openWithId(int productId) {
+        getDriver().navigate().to(String.format("https://automationexercise.com/product_details/%d", productId));
     }
 }
 
