@@ -34,5 +34,6 @@ public class FilterProductsBrand {
     @And("I should see products belonging to {string} displayed")
     public void iShouldSeeProductsBelongingToDisplayed(String brand) {
         productsPage.verifyBrandProductsDisplayed(brand);
+
     }
 }

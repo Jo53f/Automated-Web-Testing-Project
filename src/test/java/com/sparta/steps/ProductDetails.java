@@ -3,6 +3,7 @@ package com.sparta.steps;
 import com.sparta.pom.ProductDetailsPage;
 import com.sparta.pom.ProductsPage;
 import io.cucumber.java.en.*;
+import net.serenitybdd.core.pages.WebElementFacade;
 
 public class ProductDetails {
 
@@ -115,4 +116,4 @@ public class ProductDetails {
     public void theCartCountShouldDisplay(String count) {
         productDetailsPage.verifyCartCount(count);
     }
-}
+    }
