@@ -17,14 +17,14 @@ public class ProductDetailsPage extends PageObject {
     private WebElementFacade productPrice;
 
     @FindBy(css = "#quantity")
-    private WebElementFacade quantityInput;
+    private  WebElementFacade quantityInput;
 
     @FindBy(css = ".cart")
-    private WebElementFacade addToCartButton;
+    private  WebElementFacade addToCartButton;
 
     // Modal + navigation
     @FindBy(css = "#cartModal")
-    private WebElementFacade successModal;
+    private  WebElementFacade successModal;
 
     @FindBy(css = "a[href='/view_cart']")
     private WebElementFacade viewCartButton;
@@ -43,9 +43,10 @@ public class ProductDetailsPage extends PageObject {
     private WebElementFacade brand;
 
     @FindBy(css = "button[aria-label='Consent']")
-    private WebElementFacade consentButton;
+    private  WebElementFacade consentButton;
 
     public ProductDetailsPage(WebDriver driver) {
+        super(driver);
     }
 
     public String getProductName() {
@@ -56,16 +57,16 @@ public class ProductDetailsPage extends PageObject {
         return productPrice.getText();
     }
 
-    public void setQuantity(int qty) {
+    public  void setQuantity(int qty) {
         quantityInput.clear();
         quantityInput.type(String.valueOf(qty));
     }
 
-    public void clickAddToCart() {
+    public  void clickAddToCart() {
         addToCartButton.click();
     }
 
-    public boolean isSuccessModalVisible() {
+    public  boolean isSuccessModalVisible() {
         return successModal.isVisible();
     }
 
@@ -82,7 +83,7 @@ public class ProductDetailsPage extends PageObject {
                 && brand.isVisible();
     }
 
-    public void acceptConsent() {
+    public  void acceptConsent() {
         try {
             if (consentButton.isVisible()) {
                 consentButton.waitUntilClickable().click();

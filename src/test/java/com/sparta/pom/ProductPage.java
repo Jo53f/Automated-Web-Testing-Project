@@ -9,6 +9,18 @@ import org.openqa.selenium.support.FindBy;
        @DefaultUrl("https://automationexercise.com/products")
        public class ProductPage extends PageObject {
 
+
+
+           @FindBy(css = "a[href='#dismiss-cookie']")
+           private WebElementFacade dismissCookieBanner;
+
+           public void dismissCookiesIfPresent() {
+               if (dismissCookieBanner.isPresent() && dismissCookieBanner.isVisible()) {
+                   dismissCookieBanner.click();
+               }
+           }
+
+
            // Product information
            @FindBy(css = ".product-information h2")
            private WebElementFacade productName;
@@ -80,6 +92,7 @@ import org.openqa.selenium.support.FindBy;
                        && availability.isVisible()
                        && condition.isVisible()
                        && brand.isVisible();
+
            }
 
            public void acceptConsent() {

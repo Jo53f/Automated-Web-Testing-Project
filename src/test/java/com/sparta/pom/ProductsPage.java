@@ -1,5 +1,6 @@
 package com.sparta.pom;
 
+import net.serenitybdd.core.pages.PageObject;
 import net.serenitybdd.core.pages.WebElementFacade;
 import net.thucydides.core.annotations.DefaultUrl;
 import org.openqa.selenium.support.FindBy;
@@ -7,9 +8,9 @@ import org.openqa.selenium.support.FindBy;
 import static net.thucydides.core.webdriver.ThucydidesWebDriverSupport.getDriver;
 
 @DefaultUrl("https://automationexercise.com/products")
-public class ProductsPage {
+public class ProductsPage extends PageObject {
     @FindBy(xpath = "(//a[contains(@href,'/product_details/')])[1]")
-    private WebElementFacade viewProduct;
+    private  WebElementFacade viewProduct;
 
     @FindBy(xpath = "(//a[contains(@class,'add-to-cart')])[1]")
     private WebElementFacade addToCart;
@@ -20,15 +21,18 @@ public class ProductsPage {
     @FindBy(xpath = "//button[contains(text(),'Continue Shopping')]")
     private WebElementFacade continueShoppingButton;
 
-    public void clickViewProduct() {
+    public  void clickViewProduct() {
         viewProduct.click();
+    }
+
+    public void acceptConsent() {
     }
 
     public void clickAddToCart() {
         addToCart.click();
     }
 
-    public void shouldBeOnProductDetailsPage() {
+    public  void shouldBeOnProductDetailsPage() {
         getDriver().getCurrentUrl().contains("product_details");
     }
 
@@ -39,4 +43,6 @@ public class ProductsPage {
     public void shouldShowContinueShoppingButton() {
         continueShoppingButton.shouldBeVisible();
     }
+
+
 }
