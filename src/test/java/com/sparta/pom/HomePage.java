@@ -96,7 +96,7 @@ public class HomePage extends PageObject {
     }
 
     public void logOut() {
-        loginLink.click();
+        logoutLink.click();
     }
 
     public void deleteAccount() {
