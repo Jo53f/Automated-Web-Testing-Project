@@ -62,10 +62,7 @@ public class HomePage extends PageObject {
 
     public void acceptConsent() {
         try {
-            if (consentButton.isVisible()) {
-                consentButton.waitUntilClickable().click();
-                consentButton.waitUntilNotVisible();
-            }
+            consentButton.waitUntilClickable().click();
         } catch (Exception e) {
         }
     }
