@@ -21,6 +21,24 @@ public class ProductsPage extends PageObject {
     @FindBy(xpath = "//button[contains(text(),'Continue Shopping')]")
     private WebElementFacade continueShoppingButton;
 
+    public static void clickProductsButton() {
+    }
+
+    public static void verifyHomePageVisible() {
+    }
+
+    public static void openHomePage(String url) {
+    }
+
+    public static void verifyAllProductsPage() {
+    }
+
+    public static void verifyProductsListVisible() {
+    }
+
+    public static void clickFirstProduct() {
+    }
+
     public  void clickViewProduct() {
         viewProduct.click();
     }
