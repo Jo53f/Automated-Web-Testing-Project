@@ -1,7 +1,7 @@
 package com.sparta.steps;
 
 import com.sparta.pom.*;
-//import com.sparta.pom.ProductsPage;
+//import com.sparta.pom.ProductsPagetemp;
 //import com.sparta.pom.CartPage;
 import net.thucydides.core.annotations.Managed;
 import net.serenitybdd.junit5.SerenityJUnit5Extension;
@@ -19,17 +19,17 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 public class AutoExTest {
 
     @Managed
-    HomePage home;
+    HomePagetemp home;
     //HPage home;
 
     @Managed
-    ProductsPage products;
+    ProductsPagetemp products;
 
 
 
 
     @Managed
-    LoginSignup login;
+    LoginSignuptemp login;
 
     @Managed
     CartPage checkout;
