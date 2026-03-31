@@ -2,9 +2,11 @@ package com.sparta.steps;
 
 import com.sparta.pom.ProductsPage;
 import io.cucumber.java.en.*;
+import net.thucydides.core.annotations.Managed;
 
 public class SearchProduct {
 
+    @Managed
     ProductsPage productsPage;
 
     @Given("I am on the products page")

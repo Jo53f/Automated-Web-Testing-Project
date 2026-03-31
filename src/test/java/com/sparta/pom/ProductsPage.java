@@ -21,6 +21,9 @@ public class ProductsPage extends PageObject {
     @FindBy(xpath = "//button[contains(text(),'Continue Shopping')]")
     private WebElementFacade continueShoppingButton;
 
+    @FindBy(css = "button[aria-label='Consent']")
+    private WebElementFacade consentButton;
+
     public static void clickProductsButton() {
     }
 
@@ -44,6 +47,11 @@ public class ProductsPage extends PageObject {
     }
 
     public void acceptConsent() {
+        try {
+            consentButton.waitUntilClickable().click();
+        } catch (Exception e) {
+            System.out.println(e);
+        }
     }
 
     public void clickAddToCart() {

@@ -7,7 +7,7 @@ import org.openqa.selenium.support.FindBy;
 import net.thucydides.core.pages.PageObject;
 
 @DefaultUrl("https://automationexercise.com/products")
-public class ProductsPagetemp extends PageObject {
+public class ProductsPageDetail extends PageObject {
 
 
     @FindBy(css = "a[href='/view_cart']")

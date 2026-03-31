@@ -4,24 +4,24 @@ Feature: Shopping Cart Quantity Management
   So that I can ensure I am purchasing the right amount before paying
 
   Background:
-    Given I am on the products page
-    And I have nothing in my cart
+    Given They are on the products page
+    And have nothing in their cart
 
   # ========== NORMAL PATH ==========
   @normal
   Scenario: Add single item to cart
-    When I add "Blue Top" to my cart once
-    And I navigate to the "Cart" page
-    Then I should see "Blue Top" in my cart
-    And the cart count should display "1"
+    When add "Blue Top" to my cart once
+    And navigate to the "Cart" page
+    Then they should see "Blue Top" in the cart
+    And the carts count should display "1"
 
   # ========== HAPPY PATH ==========
   @happy
   Scenario: Add multiple quantities of same item
-    When I add "Blue Top" to my cart twice
-    And I navigate to the "Cart" page
-    Then I should see "Blue Top" in my cart
-    And the cart count should display "2"
-    And the quantity for "Blue Top" should be "2"
-    And the subtotal should reflect "2" times the unit price
+    When adding "Blue Top" to my cart twice
+    And navigating to the "Cart" page
+    Then they should see "Blue Top" in my cart
+    And the carts count should display "2"
+    And quantity for "Blue Top" should be "2"
+    And subtotal should reflect "2" times the unit price
 

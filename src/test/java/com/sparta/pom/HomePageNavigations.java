@@ -7,7 +7,7 @@ import net.thucydides.core.pages.PageObject;
 import org.openqa.selenium.WebElement;
 
 @DefaultUrl("https://automationexercise.com/")
-public class HomePagetemp extends PageObject {
+public class HomePageNavigations extends PageObject {
 
     @FindBy(linkText = "Home")
     private WebElementFacade homeLink;
