@@ -49,6 +49,42 @@ public class ProductDetailsPage extends PageObject {
         super(driver);
     }
 
+    public static void verifyProductDetailPage() {
+    }
+
+    public static void verifyProductName() {
+    }
+
+    public static void verifyProductCategory() {
+    }
+
+    public static void verifyProductPrice() {
+    }
+
+    public static void ensureCartIsEmpty() {
+    }
+
+    public static void addProductTwice(String productName) {
+    }
+
+    public static void navigateToPage(String page) {
+    }
+
+    public static void verifyProductInCart(String productName) {
+    }
+
+    public static void verifyCartCount(String count) {
+    }
+
+    public static void verifyProductBrand() {
+    }
+
+    public static void verifyProductCondition() {
+    }
+
+    public static void verifyProductAvailability() {
+    }
+
     public String getProductName() {
         return productName.getText();
     }
