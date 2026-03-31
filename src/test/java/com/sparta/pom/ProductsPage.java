@@ -7,7 +7,7 @@ import org.openqa.selenium.support.FindBy;
 import net.thucydides.core.pages.PageObject;
 
 @DefaultUrl("https://automationexercise.com/products")
-public class PPage extends PageObject {
+public class ProductsPage extends PageObject {
 
 
     @FindBy(css = "a[href='/view_cart']")
@@ -20,9 +20,22 @@ public class PPage extends PageObject {
     @FindBy(css = ".btn.btn-default.add-to-cart")
     private WebElement addToCartButton;
 
+    @FindBy(css = "[data-product-id='1']")
+    private WebElementFacade addFirstProductToCartButton;
+
+    @FindBy(css = "[data-product-id='2")
+    private WebElementFacade addSecondProductToCartButton;
+
     // Method 1: Using FindBy annotation
     @FindBy(css = ".btn.btn-success.close-modal.btn-block")
     private WebElement continueShoppingButton;
+
+    public void clickAdd1ToCartButton() {
+        addFirstProductToCartButton.click();
+    }
+    public void clickAdd2ItemToCartButton() {
+        addSecondProductToCartButton.click();
+    }
 
     public void clickAddToCartButton() {
         addToCartButton.click();
