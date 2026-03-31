@@ -17,11 +17,6 @@ public class ContactUsSteps {
     HomePage homePage;
     ContactUs contactUs;
 
-    @Given("the user is on the home page")
-    public void userIsOnHomePage() {
-        homePage.open(); // uses @DefaultUrl
-        homePage.acceptConsent();
-    }
 
     @When("the user navigates to the Contact Us page")
     public void navigateToContactUs() {

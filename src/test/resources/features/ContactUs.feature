@@ -1,8 +1,6 @@
 Feature: ContactUs
   As a user,
-
   I want to submit a message through the contact form
-
   so that I can get in touch with the website team.
 
   @Happy
