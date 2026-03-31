@@ -6,6 +6,8 @@ Feature: LogoutSteps
   @Happy
   Scenario: User logged is able to sign out
     Given I am on the homepage
+    And I accept the cookies
+    And I have clicked Signup and Login
     And I am signed in
     When I press sign out
     Then I should be signed out of my account
