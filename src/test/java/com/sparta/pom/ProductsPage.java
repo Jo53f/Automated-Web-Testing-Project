@@ -71,4 +71,16 @@ public class ProductsPage extends PageObject {
 
     public void verifyNoProductsMessage() {
     }
+
+    public void verifyBrandsListVisible() {
+    }
+
+    public void clickBrand(String brand) {
+    }
+
+    public void verifyBrandPageNavigation() {
+    }
+
+    public void verifyBrandProductsDisplayed(String brand) {
+    }
 }
