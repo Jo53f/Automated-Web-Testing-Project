@@ -63,4 +63,12 @@ public class ProductsPage extends PageObject {
     }
 
 
+    public void searchProduct(String product) {
+    }
+
+    public void verifySearchResults(String product) {
+    }
+
+    public void verifyNoProductsMessage() {
+    }
 }
