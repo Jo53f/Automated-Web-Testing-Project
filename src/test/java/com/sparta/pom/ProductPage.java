@@ -6,7 +6,7 @@ import net.thucydides.core.pages.PageObject;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.FindBy;
 
-       @DefaultUrl("https://automationexercise.com/product_details/1")
+       @DefaultUrl("https://automationexercise.com/products")
        public class ProductPage extends PageObject {
 
            // Product information
@@ -41,6 +41,9 @@ import org.openqa.selenium.support.FindBy;
 
            @FindBy(css = ".product-information p:nth-of-type(4)")
            private WebElementFacade brand;
+
+           @FindBy(css = "button[aria-label='Consent']")
+           private WebElementFacade consentButton;
 
            public ProductPage(WebDriver driver) {
            }
@@ -77,6 +80,17 @@ import org.openqa.selenium.support.FindBy;
                        && availability.isVisible()
                        && condition.isVisible()
                        && brand.isVisible();
+           }
+
+           public void acceptConsent() {
+               try {
+                   if (consentButton.isVisible()) {
+                       consentButton.waitUntilClickable().click();
+                       consentButton.waitUntilNotVisible();
+                   }
+               } catch (Exception e) {
+                   System.out.println(e);
+               }
            }
        }
 
