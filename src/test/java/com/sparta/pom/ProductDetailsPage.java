@@ -6,7 +6,7 @@ import net.thucydides.core.pages.PageObject;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.FindBy;
 
-@DefaultUrl("https://automationexercise.com/product_details/{productId}")
+@DefaultUrl("https://automationexercise.com/product_details/1")
 public class ProductDetailsPage extends PageObject {
 
     // Product information

@@ -4,13 +4,17 @@ import net.serenitybdd.core.annotations.findby.FindBy;
 import net.serenitybdd.core.pages.PageObject;
 import net.serenitybdd.core.pages.WebElementFacade;
 import net.thucydides.core.annotations.DefaultUrl;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import java.time.Duration;
 
 @DefaultUrl("https://automationexercise.com/contact_us")
 public class ContactUs extends PageObject {
     @FindBy(linkText = "Contact us")
     private WebElementFacade contactUsLink;
 
-    @FindBy(xpath = "//h2[text()='Get In Touch']")
+    @FindBy(xpath = "//h2[contains(text(),'Get In Touch')]")
     private WebElementFacade getInTouchHeader;
 
     @FindBy(name = "name")
@@ -37,8 +41,12 @@ public class ContactUs extends PageObject {
     @FindBy(linkText = "Home")
     private WebElementFacade homeButton;
 
-    public void getInTouchIsVisible() {
-        getInTouchHeader.shouldBeVisible();
+//    @FindBy(css = ".status.alert.alert-success")
+//    WebElementFacade contactSuccessMessage;
+
+    public boolean isGetInTouchVisible() {
+        getInTouchHeader.waitUntilVisible();
+        return getInTouchHeader.isVisible();
     }
 
     public void fillForm(String name, String email, String subject, String message) {
@@ -46,6 +54,14 @@ public class ContactUs extends PageObject {
         emailInput.type(email);
         subjectInput.type(subject);
         messageInput.type(message);
+    }
+
+    public void getInTouchIsNotVisible() {
+        getInTouchHeader.shouldNotBeVisible();
+    }
+
+    public void formShouldNotSubmit() {
+        submitButton.shouldNotBeEnabled();
     }
 
     public void uploadFile(String filePath) {
@@ -58,6 +74,17 @@ public class ContactUs extends PageObject {
 
     public void shouldBeReadyForSubmission() {
         submitButton.shouldBeEnabled();
+    }
+
+    public void shouldSeeSuccessMessage() {
+        successMessage.shouldBeVisible();
+    }
+
+
+    public void acceptAlert() {
+        WebDriverWait wait = new WebDriverWait(getDriver(), Duration.ofSeconds(5));
+        wait.until(ExpectedConditions.alertIsPresent());
+        getDriver().switchTo().alert().accept();
     }
 
 }
