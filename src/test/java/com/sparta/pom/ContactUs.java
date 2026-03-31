@@ -41,9 +41,6 @@ public class ContactUs extends PageObject {
     @FindBy(linkText = "Home")
     private WebElementFacade homeButton;
 
-//    @FindBy(css = ".status.alert.alert-success")
-//    WebElementFacade contactSuccessMessage;
-
     public boolean isGetInTouchVisible() {
         getInTouchHeader.waitUntilVisible();
         return getInTouchHeader.isVisible();
@@ -79,7 +76,6 @@ public class ContactUs extends PageObject {
     public void shouldSeeSuccessMessage() {
         successMessage.shouldBeVisible();
     }
-
 
     public void acceptAlert() {
         WebDriverWait wait = new WebDriverWait(getDriver(), Duration.ofSeconds(5));
