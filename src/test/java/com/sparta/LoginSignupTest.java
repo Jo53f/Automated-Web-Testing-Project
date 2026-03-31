@@ -20,14 +20,14 @@ public class LoginSignupTest {
 
     @BeforeEach
     public void setUp() {
-        login.open();
-        login.acceptConsent();
+        homepage.open();
+        homepage.acceptConsent();
+        homepage.goToLogin();
     }
 
     @Test
     @DisplayName("typed username")
     void typingRight(){
-//        login.open();
         login.enterLoginEmail("hello@hotmail.com");
         login.enterLoginPassword("password1");
         login.pressLogin();
@@ -39,7 +39,6 @@ public class LoginSignupTest {
     @Test
     @DisplayName("No error message if nothing is submitted")
     void noErrorBeforeSubmission(){
-//        login.open();
         MatcherAssert.assertThat(login.isLoginError(), Matchers.is(false));
     }
 }
