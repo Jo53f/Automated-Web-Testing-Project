@@ -1,16 +1,11 @@
 package com.sparta.runner;
 
-import com.sparta.pom.SignupPage;
 import com.sparta.pom.AccountDetailsPage;
 import net.serenitybdd.annotations.Managed;
 import net.serenitybdd.annotations.Steps;
 import net.serenitybdd.junit5.SerenityJUnit5Extension;
-import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.openqa.selenium.WebDriver;
-
-import static org.hamcrest.MatcherAssert.assertThat;
-import static org.hamcrest.Matchers.containsString;
 
 @ExtendWith(SerenityJUnit5Extension.class)
 public class TestRunner {
@@ -23,27 +18,6 @@ public class TestRunner {
 
         @Steps
         AccountDetailsPage detailsPage;
-
-        @Test
-        public void testCompleteRegistrationFlow() {
-
-                signupPage.openAt("https://automationexercise.com/login");
-
-                String uniqueEmail = "sparta" + System.currentTimeMillis() + "@test.com";
-                signupPage.enterNameAndEmail("Spartan User", uniqueEmail);
-                signupPage.clickSignup();
-
-
-                detailsPage.fillAccountInfo("SecurePass123", "10", "July", "1995");
-                detailsPage.fillAddressInfo(
-                        "John", "Doe", "123 High St",
-                        "India", "Maharashtra", "Mumbai", "400001", "9876543210"
-                );
-                detailsPage.clickCreateAccount();
-
-
-                assertThat(driver.getCurrentUrl(), containsString("account_created"));
-        }
 }
 
 

@@ -5,11 +5,11 @@ import org.openqa.selenium.By;
 
 public class AccountDetailsPage extends PageObject {
 
+    // Selectors
     private final By passwordField = By.id("password");
     private final By days = By.id("days");
     private final By months = By.id("months");
     private final By years = By.id("years");
-
     private final By firstName = By.id("first_name");
     private final By lastName = By.id("last_name");
     private final By address = By.id("address1");
@@ -21,19 +21,15 @@ public class AccountDetailsPage extends PageObject {
     private final By createAccountBtn = By.cssSelector("button[data-qa='create-account']");
 
     public void fillAccountInfo(String password, String d, String m, String y) {
-        // CORRECTION: Wait for the element to appear before interacting
-        // This prevents the NoSuchElementException during page transitions
-        $(passwordField).waitUntilVisible().type(password);
-
+        $(passwordField).type(password);
         $(days).selectByValue(d);
-        $(months).selectByVisibleText(m);
+        $(months).selectByValue(m);
         $(years).selectByValue(y);
     }
 
-    public void fillAddressInfo(String fn, String ln, String addr, String ctry, String st, String ct, String zip, String mob) {
-        // It's good practice to ensure the first element of a new section is visible too
-        $(firstName).waitUntilVisible().type(fn);
-        $(lastName).type(ln);
+    public void fillAddressInfo(String fName, String lName, String addr, String ctry, String st, String ct, String zip, String mob) {
+        $(firstName).type(fName);
+        $(lastName).type(lName);
         $(address).type(addr);
         $(country).selectByVisibleText(ctry);
         $(state).type(st);
