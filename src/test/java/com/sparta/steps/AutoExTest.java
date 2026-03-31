@@ -21,8 +21,8 @@ import java.util.List;
 public class AutoExTest {
 
     @Managed
-    HomePage homePage;
-    HPage home;
+    HomePage home;
+    //HPage home;
 
     @Managed
     PPage products;
@@ -52,7 +52,7 @@ public class AutoExTest {
 
         MatcherAssert.assertThat(
                 "URL should match the base URL",
-                home.getCurrentUrl(),
+                home.getDriver().getCurrentUrl(),
                 Matchers.equalTo("https://automationexercise.com/")
         );
 
@@ -79,16 +79,21 @@ public class AutoExTest {
 
         checkout.clickRegisterLogin();
 
-        login.enterLoginEmail("hello@hotmail.com");
-        login.enterLoginPassword("password1");
+        login.enterLoginEmail("NewYS@bbj.com");
+        login.enterLoginPassword("123");
         login.pressLogin();
+
+        home.goToCart();
+
+        checkout.clickPay();
+
 
 
 
         MatcherAssert.assertThat(
                 "URL should match the base URL",
                 products.getCurrentUrl(),
-                Matchers.equalTo("https://automationexercise.com/view_cart")
+                Matchers.equalTo("https://automationexercise.com/")
         );
 
     }
