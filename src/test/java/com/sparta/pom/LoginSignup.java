@@ -75,10 +75,7 @@ public class LoginSignup extends PageObject {
 
     public void acceptConsent() {
         try {
-            if (consentButton.isVisible()) {
-                consentButton.waitUntilClickable().click();
-                consentButton.waitUntilNotVisible();
-            }
+            consentButton.waitUntilClickable().click();
         } catch (Exception e) {
             System.out.println(e);
         }

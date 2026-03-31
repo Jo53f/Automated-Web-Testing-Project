@@ -18,6 +18,13 @@ public class LoginSteps {
     @Given("I am on the Signup and Login page")
     public void iAmOnSignUpAndLoginPage() {
         loginSignUp.open();
+        loginSignUp.acceptConsent();
+    }
+
+    @And("I accept the cookies")
+    public void iConsentToCookies() throws InterruptedException {
+        getDriver().wait(5000L);
+        loginSignUp.acceptConsent();
     }
 
     @And("I have entered the email {string}")
