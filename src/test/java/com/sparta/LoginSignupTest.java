@@ -1,6 +1,6 @@
 package com.sparta;
 
-import com.sparta.pom.Homepage;
+import com.sparta.pom.HomePage;
 import com.sparta.pom.LoginSignup;
 import net.serenitybdd.junit5.SerenityJUnit5Extension;
 import net.thucydides.core.annotations.Managed;
@@ -15,7 +15,7 @@ import org.junit.jupiter.api.extension.ExtendWith;
 public class LoginSignupTest {
 
     @Managed
-    Homepage homepage;
+    HomePage homepage;
     LoginSignup login;
 
     @BeforeEach
