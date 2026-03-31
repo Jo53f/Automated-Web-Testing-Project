@@ -1,6 +1,6 @@
 package com.sparta.steps;
 
-import com.sparta.pom.Homepage;
+import com.sparta.pom.HomePage;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -13,7 +13,7 @@ import static net.thucydides.core.webdriver.ThucydidesWebDriverSupport.getDriver
 public class NavigateToLoginSteps {
 
     @Managed
-    Homepage homepage;
+    HomePage homepage;
 
     @Given("I am on the homepage")
     public void iAmOnTheHomePage() {
@@ -22,7 +22,7 @@ public class NavigateToLoginSteps {
 
     @And("I have clicked Signup / Login")
     public void iHaveClickedOnSignUpAndLogin() {
-        homepage.clickOnLoginSignUp();
+        homepage.goToLogin();
     }
 
     @Then("I should land on the Signup / Login page")

@@ -1,6 +1,5 @@
 package com.sparta.steps;
 
-import com.sparta.pom.Homepage;
 import com.sparta.pom.LoginSignup;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
