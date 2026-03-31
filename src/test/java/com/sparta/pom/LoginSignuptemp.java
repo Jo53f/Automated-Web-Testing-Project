@@ -6,7 +6,7 @@ import net.thucydides.core.pages.PageObject;
 import org.openqa.selenium.support.FindBy;
 
 @DefaultUrl("https://automationexercise.com/login")
-public class LoginSignup extends PageObject {
+public class LoginSignuptemp extends PageObject {
 
     @FindBy(css = "input[data-qa='login-email']")
     private WebElementFacade loginEmail;
