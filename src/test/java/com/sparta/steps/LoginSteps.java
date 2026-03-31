@@ -4,6 +4,7 @@ import com.sparta.pom.LoginSignup;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
 import net.thucydides.core.annotations.Managed;
 import org.hamcrest.MatcherAssert;
 import org.hamcrest.Matchers;
@@ -14,7 +15,7 @@ public class LoginSteps {
     @Managed
     LoginSignup loginSignUp;
 
-    @Given("I am on the Signup / Login page")
+    @Given("I am on the Signup and Login page")
     public void iAmOnSignUpAndLoginPage() {
         loginSignUp.open();
     }
@@ -29,7 +30,7 @@ public class LoginSteps {
         loginSignUp.enterLoginPassword(password);
     }
 
-    @And("I click the login button")
+    @When("I click the login button")
     public void iClickTheLoginButton() {
         loginSignUp.pressLogin();
     }
