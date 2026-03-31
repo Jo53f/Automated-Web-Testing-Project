@@ -23,7 +23,6 @@ public class LoginSteps {
 
     @And("I accept the cookies")
     public void iConsentToCookies() throws InterruptedException {
-        getDriver().wait(5000L);
         loginSignUp.acceptConsent();
     }
 
