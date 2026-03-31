@@ -26,14 +26,14 @@ public class TestRunner {
 
         @Test
         public void testCompleteRegistrationFlow() {
-                // PAGE 1: Initial Signup - FIXED LINE BELOW
+
                 signupPage.openAt("https://automationexercise.com/login");
 
                 String uniqueEmail = "sparta" + System.currentTimeMillis() + "@test.com";
                 signupPage.enterNameAndEmail("Spartan User", uniqueEmail);
                 signupPage.clickSignup();
 
-                // PAGE 2: Detailed Information
+
                 detailsPage.fillAccountInfo("SecurePass123", "10", "July", "1995");
                 detailsPage.fillAddressInfo(
                         "John", "Doe", "123 High St",
@@ -41,7 +41,11 @@ public class TestRunner {
                 );
                 detailsPage.clickCreateAccount();
 
-                // Final Assertion
+
                 assertThat(driver.getCurrentUrl(), containsString("account_created"));
-        } // Closes the Method
-} // Closes the Class
+        }
+}
+
+
+
+
