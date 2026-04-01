@@ -41,8 +41,8 @@ Project Goals
 
 ## 📊 Test Metrics
 
-- Total Test Cases: 
-- Automated Tests Passed: 
+- Total Test Cases: 21​
+- Automated Tests Passed: 95%
 - Exploratory Defects Found: 4
 
 ### Defects Identified
