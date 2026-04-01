@@ -44,7 +44,7 @@ public class ContactUsSteps {
         contactUs.fillForm("Legend", "theLegend@example.com", "Test", "Hello");
 //        File file = new File("src/test/resources/contact_message.txt");
 //        contactUs.uploadFile("/Users/leonidas/GitHub/Automated-Web-Testing-Project/src/test/resources/contact_message.txt");
-        contactUs.uploadFile("/home/josef/Documents/Sparta Global/Repo/Automated-Web-Testing-Project/src/test/resources/contact_message.txt");
+        contactUs.uploadFile("contact_message.txt");
         contactUs.submitForm();
         contactUs.acceptAlert();
     }

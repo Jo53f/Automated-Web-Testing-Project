@@ -62,7 +62,10 @@ public class ContactUs extends PageObject {
     }
 
     public void uploadFile(String filePath) {
-        uploadFileInput.sendKeys(filePath);
+        String projectRoot = System.getProperty("user.dir");
+        String fullPath = projectRoot + "/src/test/resources/" + filePath;
+        uploadFileInput.sendKeys(fullPath);
+//        uploadFileInput.sendKeys(filePath);
     }
 
     public void submitForm() {
