@@ -34,7 +34,7 @@ jobs:
       uses: nanasess/setup-chromedriver@v2
         
     - name: Run Serenity Cucumber tests
-      run: mvn -Dtest=CucumberRunnerTest verify
+      run: mvn clean verify -Dtest=CucumberRunnerTest
 
     - name: Upload Serenity Report
       uses: actions/upload-artifact@v4
